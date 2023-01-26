@@ -36,4 +36,12 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Add the response into a dataframe(table) so that it is neater
 streamlit.dataframe(fruityvice_normalized)
 
+my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+my_cur = my_cnx.cursor()
+my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_data_row = my_cur.fetchone()
+streamlit.text("Hello from Snowflake:")
+streamlit.text(my_data_row)
+
+
 # If you want to know more about pandas.dataframe.loc[ ], you find more information here: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html 
