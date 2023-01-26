@@ -45,12 +45,12 @@ streamlit.dataframe(my_data_rows)
 
 # Another picklist
 streamlit.header('Which fruit would you like to add?')
-fruit_choice_add = streamlit.text_input('What fruit would you like to add?','Kiwi')
-streamlit.write('The user entered ', fruit_choice_add)
+#fruit_choice_add = streamlit.text_input('What fruit would you like to add?','Kiwi')
+#streamlit.write('The user entered ', fruit_choice_add)
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice_add)
 
 # Let's put a pick list here so they can pick the fruit they want to include 
 fruits_selected = streamlit.multiselect("Which fruit would you like to add:", list(my_data_rows))
-#fruits_to_show = my_fruit_list.loc[fruits_selected]
+fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # If you want to know more about pandas.dataframe.loc[ ], you find more information here: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html 
