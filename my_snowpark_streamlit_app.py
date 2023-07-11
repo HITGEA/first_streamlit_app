@@ -18,13 +18,13 @@ st.set_page_config(
 # Create Session object
 def create_session_object():
     connection_parameters = {
-      "account": "<account_identifier>",
-      "user": "<username>",
-      "password": "<password>",
-      "role": "<role_name>",
-      "warehouse": "<warehouse_name>",
-      "database": "KNOEMA_ENVIRONMENT_DATA_ATLAS",
-      "schema": "ENVIRONMENT"
+      "account": "QT34819.US-EAST-2.aws",
+      "user": "annelie",
+      "password": "@Hy1sHeer",
+      "role": "ACCOUNTADMIN",
+      "warehouse": "COMPUTE_WC",
+      "database": "TOURISM_DATA_ATLAS",  #ENVIRONMENT_DATA_ATLAS
+      "schema": "TOURISM"
     }
     session = Session.builder.configs(connection_parameters).create()
     print(session.sql('select current_warehouse(), current_database(), current_schema()').collect())
